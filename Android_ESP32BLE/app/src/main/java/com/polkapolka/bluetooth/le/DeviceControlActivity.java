@@ -211,10 +211,10 @@ public class DeviceControlActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
-            case R.id.menu_connect:
+            case 0: //R.id.menu_connect:
                 mBluetoothLeService.connect(mDeviceAddress);
                 return true;
-            case R.id.menu_disconnect:
+            case 1://R.id.menu_disconnect:
                 mBluetoothLeService.disconnect();
                 return true;
             case android.R.id.home:
