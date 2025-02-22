@@ -213,18 +213,31 @@
 
             @Override
             public boolean onOptionsItemSelected(MenuItem item) {
-                switch(item.getItemId()) {
-                    case 0: //R.id.menu_connect:
-                        mBluetoothLeService.connect(mDeviceAddress);
-                        return true;
-                    case 1://R.id.menu_disconnect:
-                        mBluetoothLeService.disconnect();
-                        return true;
-                    case android.R.id.home:
-                        onBackPressed();
-                        return true;
+                int id = item.getItemId();
+
+                if (id == R.id.menu_connect) {
+                    mBluetoothLeService.connect(mDeviceAddress);
+                    return true;
+                } else if (id == R.id.menu_disconnect)
+                 {
+                     mBluetoothLeService.disconnect();
+                    return true;
                 }
+
                 return super.onOptionsItemSelected(item);
+
+//                switch(item.getItemId()) {
+//                    case R.id.menu_connect://0: //R.id.menu_connect:
+//                        mBluetoothLeService.connect(mDeviceAddress);
+//                        return true;
+//                    case R.id.menu_disconnect ://1://R.id.menu_connect:
+//                        mBluetoothLeService.disconnect();
+//                        return true;
+//                    case android.R.id.home:
+//                        onBackPressed();
+//                        return true;
+//                }
+//                return super.onOptionsItemSelected(item);
             }
 
             private void updateConnectionState(final int resourceId) {
