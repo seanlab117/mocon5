@@ -101,13 +101,8 @@ public class MyActivity extends AppCompatActivity {
         blescan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(blsocket != null && blsocket.isConnected())
-                {
+                connectScan();
 
-                    //send2Bluetooth(13, 13);
-
-
-                }
             }
         });
 
@@ -272,7 +267,11 @@ public class MyActivity extends AppCompatActivity {
         }
     }
 
+    void connectScan(){
+        Intent intent = new Intent(MyActivity.this, DeviceScanActivity.class);
+        startActivity(intent);
 
+    }
     void connect2LED(BluetoothDevice device)
     {
          UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb") ;
