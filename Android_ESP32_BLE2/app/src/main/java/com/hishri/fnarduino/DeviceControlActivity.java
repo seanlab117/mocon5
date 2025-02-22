@@ -18,7 +18,9 @@
         package com.hishri.fnarduino;
 
         import android.annotation.SuppressLint;
-        import android.app.Activity;
+        //sean import android.app.Activity;
+        import androidx.appcompat.app.AppCompatActivity;
+        
         import android.bluetooth.BluetoothGattCharacteristic;
         import android.bluetooth.BluetoothGattService;
         import android.content.BroadcastReceiver;
@@ -48,9 +50,9 @@
          * communicates with {@code BluetoothLeService}, which in turn interacts with the
          * Bluetooth LE API.
          */
-        public class DeviceControlActivity extends Activity {
+        public class DeviceControlActivity extends AppCompatActivity {
+            //private final static String TAG = DeviceControlActivity.class.getSismpleName();
             private final static String TAG = DeviceControlActivity.class.getSimpleName();
-
             public static final String EXTRAS_DEVICE_NAME = "DEVICE_NAME";
             public static final String EXTRAS_DEVICE_ADDRESS = "DEVICE_ADDRESS";
             private int[] RGBFrame = {0,0,0};
@@ -86,7 +88,7 @@
                     if (!mBluetoothLeService.initialize()) {
                         Log.e(TAG, "Unable to initialize Bluetooth");
                         Log.d("haha", "Unable to initialize Bluetooth" );
-                        finish();
+                       //sh();
                     }
                     // Automatically connects to the device upon successful start-up initialization.
                     mBluetoothLeService.connect(mDeviceAddress);
@@ -111,11 +113,11 @@
                     if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action)) {
                         mConnected = true;
                         updateConnectionState(R.string.connected);
-                        invalidateOptionsMenu();
+                      //sean  invalidateOptionsMenu();
                     } else if (BluetoothLeService.ACTION_GATT_DISCONNECTED.equals(action)) {
                         mConnected = false;
                         updateConnectionState(R.string.disconnected);
-                        invalidateOptionsMenu();
+                      //sean  invalidateOptionsMenu();
                         clearUI();
                     } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED.equals(action)) {
                         // Show all the supported services and characteristics on the user interface.
@@ -155,9 +157,12 @@
                 readSeek(mRed,0);
                 readSeek(mGreen,1);
                 readSeek(mBlue,2);
-
-                getActionBar().setTitle(mDeviceName);
-                getActionBar().setDisplayHomeAsUpEnabled(true);
+                if (getSupportActionBar() != null) {
+                    getSupportActionBar().setTitle("My Title");  // ✅ Works with AppCompatActivity
+                    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                }
+//sean                getActionBar().setTitle(mDeviceName);
+//sean                getActionBar().setDisplayHomeAsUpEnabled(true);
                 Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
                 bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
 

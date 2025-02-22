@@ -18,7 +18,8 @@
         package com.polkapolka.bluetooth.le;
 
         import android.annotation.SuppressLint;
-        import android.app.Activity;
+        //sean import android.app.Activity;
+        import androidx.appcompat.app.AppCompatActivity;
         import android.bluetooth.BluetoothGattCharacteristic;
         import android.bluetooth.BluetoothGattService;
         import android.content.BroadcastReceiver;
@@ -50,7 +51,7 @@
  * communicates with {@code BluetoothLeService}, which in turn interacts with the
  * Bluetooth LE API.
  */
-public class DeviceControlActivity extends Activity {
+public class DeviceControlActivity extends AppCompatActivity {
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
 
     public static final String EXTRAS_DEVICE_NAME = "DEVICE_NAME";
@@ -157,9 +158,12 @@ public class DeviceControlActivity extends Activity {
         readSeek(mRed,0);
         readSeek(mGreen,1);
         readSeek(mBlue,2);
-
-        getActionBar().setTitle(mDeviceName);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(mDeviceName);  // ✅ Works with AppCompatActivity
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+//        getActionBar().setTitle(mDeviceName);
+//        getActionBar().setDisplayHomeAsUpEnabled(true);
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
 

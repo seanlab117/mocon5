@@ -60,6 +60,8 @@ public class MyActivity extends AppCompatActivity {
 
     ListView listt;
     private Context ctx;
+
+    private BluetoothLeService mBluetoothLeService;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -268,8 +270,7 @@ public class MyActivity extends AppCompatActivity {
     }
 
     void connectScan(){
-        Intent intent = new Intent(MyActivity.this, DeviceScanActivity.class);
-        startActivity(intent);
+        //mBluetoothLeService.connect(mDeviceAddress);
 
     }
     void connect2LED(BluetoothDevice device)
