@@ -113,11 +113,11 @@
                     if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action)) {
                         mConnected = true;
                         updateConnectionState(R.string.connected);
-                      //sean  invalidateOptionsMenu();
+                        invalidateOptionsMenu();
                     } else if (BluetoothLeService.ACTION_GATT_DISCONNECTED.equals(action)) {
                         mConnected = false;
                         updateConnectionState(R.string.disconnected);
-                      //sean  invalidateOptionsMenu();
+                        invalidateOptionsMenu();
                         clearUI();
                     } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED.equals(action)) {
                         // Show all the supported services and characteristics on the user interface.
