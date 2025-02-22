@@ -1,0 +1,135 @@
+{
+  "project_info": {
+    "project_number": "283569382522",
+    "firebase_url": "https://wellwalking.firebaseio.com",
+    "project_id": "wellwalking",
+    "storage_bucket": "wellwalking.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283569382522:android:67f3eb5a93a60d2e7087c3",
+        "android_client_info": {
+          "package_name": "com.example.trackmylocation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "283569382522-c65m692pubtfn6eh3nrn5jh46dmmja5o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOOwsSpTad-vJg0YO9LFCTrOcrWKJ0P4c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "283569382522-c65m692pubtfn6eh3nrn5jh46dmmja5o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283569382522:android:6dd00ff5d95f3e297087c3",
+        "android_client_info": {
+          "package_name": "com.github.abdularis.trackmylocation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "283569382522-c65m692pubtfn6eh3nrn5jh46dmmja5o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOOwsSpTad-vJg0YO9LFCTrOcrWKJ0P4c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "283569382522-c65m692pubtfn6eh3nrn5jh46dmmja5o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283569382522:android:bef9994a64bbe2a87087c3",
+        "android_client_info": {
+          "package_name": "com.hishri.fnarduino"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "283569382522-c65m692pubtfn6eh3nrn5jh46dmmja5o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOOwsSpTad-vJg0YO9LFCTrOcrWKJ0P4c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "283569382522-c65m692pubtfn6eh3nrn5jh46dmmja5o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283569382522:android:d2b55a88060851da7087c3",
+        "android_client_info": {
+          "package_name": "com.myandroid.wellwalking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "283569382522-bqkve7aejssi86fq2kuisuj17nkvfhcg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.myandroid.wellwalking",
+            "certificate_hash": "f9c6102e9a0e907676aa0ab8c66d7bcb52ee50e7"
+          }
+        },
+        {
+          "client_id": "283569382522-c65m692pubtfn6eh3nrn5jh46dmmja5o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOOwsSpTad-vJg0YO9LFCTrOcrWKJ0P4c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "283569382522-c65m692pubtfn6eh3nrn5jh46dmmja5o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
