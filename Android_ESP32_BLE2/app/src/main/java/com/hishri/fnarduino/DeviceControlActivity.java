@@ -141,8 +141,8 @@
                 final Intent intent = getIntent();
                 mDeviceName = intent.getStringExtra(EXTRAS_DEVICE_NAME);
                 mDeviceAddress = intent.getStringExtra(EXTRAS_DEVICE_ADDRESS);
-
-
+                //sean mDeviceAddress="192.168.0.11";
+                Log.d("haha", "onCreate="+mDeviceAddress );
                 // Sets up UI references.
                 ((TextView) findViewById(R.id.device_address)).setText(mDeviceAddress);
                 mConnectionState = (TextView) findViewById(R.id.connection_state);
@@ -179,9 +179,11 @@
             protected void onResume() {
                 super.onResume();
                 registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter());
+                Log.d("haha", "registerReceiver=" );
                 if (mBluetoothLeService != null) {
                     final boolean result = mBluetoothLeService.connect(mDeviceAddress);
                     Log.d(TAG, "Connect request result=" + result);
+                    Log.d("haha", "Connect request result=" + result );
                 }
             }
 
@@ -227,10 +229,10 @@
                 return super.onOptionsItemSelected(item);
 
 //                switch(item.getItemId()) {
-//                    case R.id.menu_connect://0: //R.id.menu_connect:
+//                    case 0 ://R.id.menu_connect://0: //R.id.menu_connect:
 //                        mBluetoothLeService.connect(mDeviceAddress);
 //                        return true;
-//                    case R.id.menu_disconnect ://1://R.id.menu_connect:
+//                    case 1://R.id.menu_disconnect ://1://R.id.menu_connect:
 //                        mBluetoothLeService.disconnect();
 //                        return true;
 //                    case android.R.id.home:

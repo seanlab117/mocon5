@@ -18,6 +18,7 @@
     <item android:id="@+id/menu_refresh"
           android:checkable="false"
           android:orderInCategory="1"
+        android:title="menu_refresh"
         app:showAsAction="ifRoom" />
     <item android:id="@+id/menu_connect"
           android:title="@string/menu_connect"

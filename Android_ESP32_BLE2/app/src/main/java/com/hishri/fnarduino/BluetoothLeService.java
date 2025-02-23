@@ -215,7 +215,9 @@ public class BluetoothLeService extends Service {
      *         callback.
      */
     public boolean connect(final String address) {
-        if (mBluetoothAdapter == null || address == null) {
+       //sean if (mBluetoothAdapter == null || address == null) {
+        if (mBluetoothAdapter == null ) {
+            Log.w(TAG, "BluetoothAdapter not initialized or unspecified address."+mBluetoothAdapter+address);
             Log.w(TAG, "BluetoothAdapter not initialized or unspecified address.");
             return false;
         }
@@ -246,6 +248,7 @@ public class BluetoothLeService extends Service {
         }
 
         final BluetoothDevice device = mBluetoothAdapter.getRemoteDevice(address);
+        Log.w("haha", "Device not found.  Unable to connect."+device);
         if (device == null) {
             Log.w(TAG, "Device not found.  Unable to connect.");
             return false;
@@ -255,6 +258,7 @@ public class BluetoothLeService extends Service {
         mBluetoothGatt = device.connectGatt(this, false, mGattCallback);
         Log.d(TAG, "Trying to create a new connection.");
         mBluetoothDeviceAddress = address;
+        Log.d("haha", "Trying to create a new connection."+mBluetoothDeviceAddress);
         mConnectionState = STATE_CONNECTING;
         return true;
     }
