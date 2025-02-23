@@ -1,7 +1,5 @@
 package com.hishri.fnarduino;
 
-import static androidx.core.content.ContextCompat.startActivity;
-
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
@@ -16,9 +14,6 @@ import android.widget.BaseAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 
 /**
  * A simplistic Home Screen app built on a ListView.
@@ -47,18 +42,16 @@ public class HomeActivity extends ListActivity {
         Intent intent;
     }
 
-
-
+    /** The allowed apps */
     MyAppDesc[] progs = {
-            new MyAppDesc("Motor", new Intent(Intent.ACTION_DIAL, null)),  // Valid URI for dial
-            new MyAppDesc("RGB LED", new Intent(Intent.ACTION_VIEW, Uri.parse("http://google.com"))),
-            mDemoAppDesc = new MyAppDesc("Display", null),  // Use the properly declared object
+            new MyAppDesc("Motor",
+                    new Intent(Intent.ACTION_DIAL, null)),
+
+            new MyAppDesc("RGB LED", 						// XXX Grossly insecure kiosk!
+                    new Intent(Intent.ACTION_VIEW, Uri.parse("http://google.com"))),
+            mDemoAppDesc = new MyAppDesc("Display", null),
     };
-    // Declare the ActivityResultLauncher for a specific intent
 
-
-
-// Activity Result API setup for runtime permissions (e.g., CALL_PHONE)
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

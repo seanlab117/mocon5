@@ -22,7 +22,7 @@
         android:exported="false" />
         -->
     <activity
-        android:name="com.hishri.fnarduino.HomeActivity"
+        android:name="com.hishri.fnarduino.MainActivity"
         android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
