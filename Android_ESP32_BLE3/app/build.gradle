@@ -23,6 +23,8 @@ android {
 dependencies {
     //sean compile fileTree(dir: 'libs', include: ['*.jar'])
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.activity:activity:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
     //sean testCompile 'junit:junit:4.12'
     testImplementation 'junit:junit:4.13.2'
 

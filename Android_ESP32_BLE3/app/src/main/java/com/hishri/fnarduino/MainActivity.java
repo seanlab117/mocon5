@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         //sean setSupportActionBar(toolbar);
+        //sean setSupportActionBar(toolbar);
         getSupportFragmentManager().addOnBackStackChangedListener(this);
         if (savedInstanceState == null)
             getSupportFragmentManager().beginTransaction().add(R.id.fragment, new DevicesFragment(), "devices").commit();
